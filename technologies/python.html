@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Jayesh Sukhadiya - Python Development</title>
+  <meta name="description" content="Python development expertise including web frameworks, data science, automation and more">
+  <meta name="keywords" content="python, django, flask, data science, machine learning, automation, web development">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+  <style>
+    .hover-card {
+      transition: transform 0.3s ease;
+    }
+
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    }
+
+    .card-title {
+      font-weight: 600;
+    }
+
+    .list-unstyled a {
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .list-unstyled a:hover {
+      color: #0d6efd;
+    }
+
+    .feature-card {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .feature-icon {
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1);
+    }
+
+    .hover-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(32, 83, 255, 0.05) 0%, rgba(32, 83, 255, 0) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .feature-card:hover .hover-overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Jayesh Sukhadiya</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="../index.html#hero">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li class="dropdown"><a href="../index.html#skills" class="active"><span>Technologies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="./laravel.html">Laravel</a></li>
+              <li><a href="./nodejs.html">Node.js</a></li>
+              <li><a href="./angular.html">Angular</a></li>
+              <li><a href="./nextjs.html">Next.js</a></li>
+              <li><a href="./reactjs.html">React.js</a></li>
+              <li><a href="./tailwind.html">Tailwind CSS</a></li>
+              <li><a href="./bootstrap.html">Bootstrap 5.0</a></li>
+              <li><a href="./python.html" class="active">Python</a></li>
+            </ul>
+          </li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#tutorials">Tutorials</a></li>
+              <li><a href="#case-studies">Case Studies</a></li>
+            </ul>
+          </li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section py-5" style="background-color: #f8fafc; font-family: 'Poppins', sans-serif;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 text-center mb-5">
+            <div class="hero-badge mb-3 d-inline-block py-1 px-3 rounded-pill" style="background-color: rgba(32, 83, 255, 0.1); color: #2053FF; font-weight: 500;">Programming Language</div>
+            <h1 class="display-3 fw-bold mb-3" style="color: #1a202c; font-family: 'latobold', Helvetica Neue, Helvetica;">Python <span style="color: #2053FF;">Development</span> Journey</h1>
+            <p class="lead mb-4" style="color: #4a5568; font-size: 1.25rem; max-width: 700px; margin: 0 auto;">Explore Python's versatility from web development to data science and automation</p>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+              <a href="#python-basics" class="btn btn-primary px-4 py-2 rounded-pill" style="background-color: #2053FF; border: none; font-weight: 500;">Get Started</a>
+              <a href="#python-resources" class="btn btn-outline-secondary px-4 py-2 rounded-pill" style="border-color: #718096; color: #4a5568; font-weight: 500;">View Resources</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 rounded-4 overflow-hidden" style="box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+              <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #2053FF 0%, #6B8CFF 100%);">
+                <h3 class="text-white mb-0 text-center fw-bold" style="font-family: 'Raleway', sans-serif;">Core Python</h3>
+              </div>
+              <div class="card-body p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#python-syntax" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(32, 83, 255, 0.1);">
+                        <i class="bi bi-code-slash fs-5" style="color: #2053FF;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Basic Syntax</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#data-structures" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(32, 83, 255, 0.1);">
+                        <i class="bi bi-diagram-3 fs-5" style="color: #2053FF;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Data Structures</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#functions" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(32, 83, 255, 0.1);">
+                        <i class="bi bi-box fs-5" style="color: #2053FF;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Functions</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#oop" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(32, 83, 255, 0.1);">
+                        <i class="bi bi-boxes fs-5" style="color: #2053FF;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">OOP Concepts</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 rounded-4 overflow-hidden" style="box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+              <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #00C853 0%, #69F0AE 100%);">
+                <h3 class="text-white mb-0 text-center fw-bold" style="font-family: 'Raleway', sans-serif;">Web Development</h3>
+              </div>
+              <div class="card-body p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#django" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(0, 200, 83, 0.1);">
+                        <i class="bi bi-globe fs-5" style="color: #00C853;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Django Framework</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#flask" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(0, 200, 83, 0.1);">
+                        <i class="bi bi-server fs-5" style="color: #00C853;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Flask Microframework</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#fastapi" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(0, 200, 83, 0.1);">
+                        <i class="bi bi-lightning fs-5" style="color: #00C853;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">FastAPI</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#rest-apis" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(0, 200, 83, 0.1);">
+                        <i class="bi bi-hdd-network fs-5" style="color: #00C853;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">REST APIs</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 rounded-4 overflow-hidden" style="box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+              <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFB4B4 100%);">
+                <h3 class="text-white mb-0 text-center fw-bold" style="font-family: 'Raleway', sans-serif;">Data Science</h3>
+              </div>
+              <div class="card-body p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#numpy" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(255, 107, 107, 0.1);">
+                        <i class="bi bi-calculator fs-5" style="color: #FF6B6B;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">NumPy & Pandas</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#matplotlib" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(255, 107, 107, 0.1);">
+                        <i class="bi bi-graph-up fs-5" style="color: #FF6B6B;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Data Visualization</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#machine-learning" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(255, 107, 107, 0.1);">
+                        <i class="bi bi-cpu fs-5" style="color: #FF6B6B;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Machine Learning</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0 px-0 py-3">
+                    <a href="#deep-learning" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle" style="width: 36px; height: 36px; background-color: rgba(255, 107, 107, 0.1);">
+                        <i class="bi bi-braces fs-5" style="color: #FF6B6B;"></i>
+                      </span>
+                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Deep Learning</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="python-features" class="section light-background py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center" data-aos="fade-up">
+            <h2 class="display-4 fw-bold">Key Features of Python</h2>
+            <p class="section-subtitle text-muted mb-5">Discover the powerful features that make Python a top choice for development.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-code-slash fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Clean Syntax</h3>
+              <p class="feature-description mb-0 text-muted">Python's elegant and readable syntax makes it easy to write and maintain code.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-boxes fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Rich Ecosystem</h3>
+              <p class="feature-description mb-0 text-muted">Extensive standard library and third-party packages for various applications.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-cpu fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Cross-Platform</h3>
+              <p class="feature-description mb-0 text-muted">Runs on multiple platforms including Windows, macOS, and Linux.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-gear fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Automation</h3>
+              <p class="feature-description mb-0 text-muted">Powerful tools for automating tasks and workflows.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-graph-up fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Data Science</h3>
+              <p class="feature-description mb-0 text-muted">Leading language for data analysis, machine learning, and scientific computing.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="600">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-globe fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Web Development</h3>
+              <p class="feature-description mb-0 text-muted">Robust frameworks for building web applications and APIs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="python-benefits" class="section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold mb-3" style="color: #1a202c; font-family: 'Poppins', sans-serif;">Benefits of Using Python</h2>
+            <p class="section-subtitle lead text-muted" style="font-family: 'Open Sans', sans-serif; max-width: 800px; margin: 0 auto;">Explore the advantages that Python offers for development projects.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-code-slash fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Readability</h3>
+              <p class="feature-description mb-0 text-muted">Clean and intuitive syntax that emphasizes code readability and maintainability.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-boxes fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Versatility</h3>
+              <p class="feature-description mb-0 text-muted">Suitable for web development, data science, automation, and more.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-people fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Community</h3>
+              <p class="feature-description mb-0 text-muted">Large and active community with extensive documentation and support.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-gear fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Productivity</h3>
+              <p class="feature-description mb-0 text-muted">Rapid development with extensive libraries and frameworks.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-graph-up fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Data Science</h3>
+              <p class="feature-description mb-0 text-muted">Leading language for data analysis, machine learning, and scientific computing.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="600">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-shield-check fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Security</h3>
+              <p class="feature-description mb-0 text-muted">Built-in security features and best practices for secure development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="python-web" class="section py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold mb-3" style="color: #1a202c; font-family: 'Poppins', sans-serif;">Web Development with Python</h2>
+            <p class="section-subtitle lead text-muted" style="font-family: 'Open Sans', sans-serif; max-width: 800px; margin: 0 auto;">Explore Python's powerful web frameworks and tools for building modern web applications.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-globe fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Django</h3>
+              <p class="feature-description mb-0 text-muted">Full-featured web framework with built-in admin, ORM, and security features.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-server fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Flask</h3>
+              <p class="feature-description mb-0 text-muted">Lightweight and flexible microframework for building web applications.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-lightning fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">FastAPI</h3>
+              <p class="feature-description mb-0 text-muted">Modern, fast web framework for building APIs with automatic documentation.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-hdd-network fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">REST APIs</h3>
+              <p class="feature-description mb-0 text-muted">Build robust RESTful APIs with Python frameworks and tools.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-database fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Database Integration</h3>
+              <p class="feature-description mb-0 text-muted">Seamless integration with various databases and ORMs.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="600">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center" style="border-top: 4px solid #2053FF;">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-shield-check fs-2" style="color: #2053FF;"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Security</h3>
+              <p class="feature-description mb-0 text-muted">Built-in security features and best practices for web applications.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer py-4 bg-light mt-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md-6">
+          <p class="mb-md-0 text-center text-md-start">© 2023 <strong class="sitename">Jayesh Sukhadiya</strong> • All Rights Reserved</p>
+        </div>
+        <div class="col-md-6">
+          <div class="social-links d-flex gap-3 justify-content-center justify-content-md-end">
+            <a href="#" class="text-muted" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-muted" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/mr.jayesh_sukhadiya/" class="text-muted" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/jayesh-sukhadiya-308896b0/" class="text-muted" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
