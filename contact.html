@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - EasyFolio Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Contact Me - Jayesh Sukhadiya</title>
+  <meta name="description" content="Get in touch with Jayesh Sukhadiya - Web Developer specializing in Laravel, Angular, Vue.js and Python">
+  <meta name="keywords" content="contact, web developer, Laravel, Angular, Vue.js, Python">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -15,203 +15,202 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="portfolio-details-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
+<body style="font-family: 'Poppins', sans-serif; background: #fafafa; color: #2d3436; line-height: 1.6;">
+  <header id="header" class="header d-flex align-items-center sticky-top" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+      <a href="../index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">Jayesh Sukhadiya</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about-us.html">About</a></li>
-          <li class="dropdown"><a href="../index.html#skills" class="active"><span>Technologies</span> <i
-                class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="../index.html#hero">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li class="dropdown"><a href="../index.html#skills" class="active"><span>Technologies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="./technologies/laravel.html">Laravel</a></li>
-              <li><a href="./technologies/nodejs.html">Node.js</a></li>
-              <li><a href="./technologies/angular.html">Angular</a></li>
-              <li><a href="./technologies/nextjs.html">Next.js</a></li>
-              <li><a href="./technologies/reactjs.html">React.js</a></li>
-              <li><a href="./technologies/tailwind.html">Tailwind CSS</a></li>
-              <li><a href="./technologies/bootstrap.html">Bootstrap 5.0</a></li>
-              <li><a href="./technologies/python.html">Python</a></li>
+              <li><a href="./laravel.html">Laravel</a></li>
+              <li><a href="./nodejs.html">Node.js</a></li>
+              <li><a href="./angular.html">Angular</a></li>
+              <li><a href="./nextjs.html">Next.js</a></li>
+              <li><a href="./reactjs.html">React.js</a></li>
+              <li><a href="./tailwind.html">Tailwind CSS</a></li>
+              <li><a href="./bootstrap.html">Bootstrap 5.0</a></li>
+              <li><a href="./python.html" class="active">Python</a></li>
             </ul>
           </li>
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="/portfolio.html">Portfolio</a></li>
           <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="blogs/blog.html">Blog</a></li>
-              <li><a href="events/events.html">Events</a></li>
-              <li><a href="tutorials/tutorials.html">Tutorials</a></li>
-              <li><a href="case-studies/case-studies.html">Case Studies</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#tutorials">Tutorials</a></li>
+              <li><a href="#case-studies">Case Studies</a></li>
             </ul>
           </li>
-
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <div class="header-social-links">
-        <a href="#" target="_blank" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/mr.jayesh_sukhadiya/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/jayesh-sukhadiya-308896b0/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
 
     </div>
   </header>
 
-  <main class="main">
+  
 
-    <!-- Page Title -->
-    <div class="page-title">
-      <div class="breadcrumbs">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="bi bi-house"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item active current">Portfolio Details</li>
-          </ol>
-        </nav>
-      </div>
 
-      <div class="title-wrapper">
-        <h1>Portfolio Details</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-      </div>
-    </div><!-- End Page Title -->
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
-
-      <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4 g-lg-5">
-          <div class="col-lg-6">
-            <img src="assets/img/portfolio/app-1.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/product-1.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/books-1.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/books-2.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/product-2.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid mb-4" alt="">
+  <section class="hero py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 text-center">
+          <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2 rounded-pill" style="background-color: rgba(61, 3, 184, 0.1) !important; color: #3d03b8 !important;">Let's Connect</span>
+          <h1 class="display-5 fw-bold mb-4" style="color: #2d3436;">Contact Me</h1>
+          <p class="lead text-muted mb-5" style="font-size: 1.1rem;">
+            Hi! I'm <span class="fw-semibold" style="color: #3d03b8">Jayesh Sukhadiya</span>, a passionate Web Developer specializing in Laravel, Angular, Vue.js, and Python. I'm always excited to discuss new projects and opportunities.
+          </p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#contact-form" class="btn btn-primary btn-lg px-4" style="background-color: #3d03b8; border-color: #3d03b8;">
+              <i class="bi bi-send me-2"></i>Message Me
+            </a>
+            <a href="https://calendly.com/" target="_blank" class="btn btn-outline-primary btn-lg px-4" style="color: #3d03b8; border-color: #3d03b8; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#3d03b8'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#3d03b8';">
+              <i class="bi bi-calendar-event me-2"></i>Schedule Call
+            </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="col-lg-6">
-
-            <div class="position-sticky" style="top: 40px">
-              <div class="portfolio-description">
-                <h2>This is an example of portfolio details</h2>
-                <p>
-                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-                </p>
-                <p>
-                  Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
-                </p>
-
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <div>
-                    <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                    <h3>Sara Wilsson</h3>
-                    <h4>Designer</h4>
-                  </div>
+  <section class="py-4 py-lg-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <div class="pe-lg-4">
+            <h1 class="h2 fw-bold mb-3 mb-lg-4" style="color: #2d3436; font-size: calc(1.5rem + 1.2vw);">Let's Create Something Amazing Together</h1>
+            <p class="text-muted mb-4 mb-lg-5" style="font-size: calc(0.95rem + 0.2vw);">Ready to bring your ideas to life? I'm here to help turn your vision into reality with clean, efficient, and innovative solutions.</p>
+            
+            <div class="contact-info">
+              <div class="d-flex align-items-center mb-3 p-3 bg-white rounded-3 shadow-sm">
+                <div class="me-3 p-2 rounded-circle" style="background: rgba(61, 3, 184, 0.1);">
+                  <i class="bi bi-envelope text-primary"></i>
                 </div>
-
-                <p>
-                  Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-                </p>
-
-                <p>
-                  Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
-                </p>
-
+                <div>
+                  <div class="text-dark fw-medium">Email</div>
+                  <div class="text-muted small">jayeshsukhadiya@example.com</div>
+                </div>
               </div>
 
-              <div class="portfolio-info mt-5">
-                <h3>Project information</h3>
-                <ul>
-                  <li><strong>Category</strong> Web design</li>
-                  <li><strong>Client</strong> ASU Company</li>
-                  <li><strong>Project date</strong> 01 March, 2020</li>
-                  <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>
-                  <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
-                </ul>
+              <div class="d-flex align-items-center mb-3 p-3 bg-white rounded-3 shadow-sm">
+                <div class="me-3 p-2 rounded-circle" style="background: rgba(61, 3, 184, 0.1);">
+                  <i class="bi bi-telephone text-primary"></i>
+                </div>
+                <div>
+                  <div class="text-dark fw-medium">Phone</div>
+                  <div class="text-muted small">+91-98765-43210</div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center mb-3 p-3 bg-white rounded-3 shadow-sm">
+                <div class="me-3 p-2 rounded-circle" style="background: rgba(61, 3, 184, 0.1);">
+                  <i class="bi bi-geo-alt text-primary"></i>
+                </div>
+                <div>
+                  <div class="text-dark fw-medium">Location</div>
+                  <div class="text-muted small">Ahmedabad, Gujarat, India</div>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
 
-      </div>
+        <div class="col-12 col-lg-6">
+          <div class="card border-0 shadow-sm rounded-4 bg-white">
+            <div class="card-body p-4">
+              <h3 class="h4 mb-4">Send Message</h3>
+              <form>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="nameInput" placeholder="Your Name">
+                  <label for="nameInput">Your Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="emailInput" placeholder="Your Email">
+                  <label for="emailInput">Your Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="subjectInput" placeholder="Subject">
+                  <label for="subjectInput">Subject</label>
+                </div>
+                <div class="form-floating mb-4">
+                  <textarea class="form-control" id="messageInput" style="height: 120px" placeholder="Your Message"></textarea>
+                  <label for="messageInput">Your Message</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-3 rounded-3" style="background-color: #3d03b8; border: none;">
+                  Send Message
+                </button>
+              </form>
 
-    </section><!-- /Portfolio Details Section -->
-
-  </main>
-
-  <footer id="footer" class="footer">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">EasyFolio</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <!-- <div class="mt-4 pt-3 border-top">
+                <div class="d-flex justify-content-center gap-3">
+                  <a href="#" class="text-muted hover-primary" style="transition: all 0.2s;">
+                    <i class="bi bi-twitter-x fs-5"></i>
+                  </a>
+                  <a href="#" class="text-muted hover-primary" style="transition: all 0.2s;">
+                    <i class="bi bi-facebook fs-5"></i>
+                  </a>
+                  <a href="#" class="text-muted hover-primary" style="transition: all 0.2s;">
+                    <i class="bi bi-instagram fs-5"></i>
+                  </a>
+                  <a href="#" class="text-muted hover-primary" style="transition: all 0.2s;">
+                    <i class="bi bi-linkedin fs-5"></i>
+                  </a>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md-6">
+          <p class="mb-md-0 text-center text-md-start">© 2023 <strong class="sitename">Jayesh Sukhadiya</strong> • All Rights Reserved</p>
+        </div>
+        <div class="col-md-6">
+          <div class="social-links d-flex gap-3 justify-content-center justify-content-md-end">
+            <a href="#" class="text-muted" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-muted" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/mr.jayesh_sukhadiya/" class="text-muted" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/jayesh-sukhadiya-308896b0/" class="text-muted" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
+  <!-- Scripts -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
 </body>
 
-</html> 
+</html>
