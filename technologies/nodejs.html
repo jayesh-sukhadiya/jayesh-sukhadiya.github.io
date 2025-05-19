@@ -30,71 +30,15 @@
   <!-- Font Awesome CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
+  <!-- Main CSS Files -->
   <link href="../assets/css/main.css" rel="stylesheet">
-  <style>
-    .hover-card {
-      transition: transform 0.3s ease;
-    }
-
-    .hover-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-    }
-
-    .card-title {
-      font-weight: 600;
-    }
-
-    .list-unstyled a {
-      color: #333;
-      transition: color 0.3s ease;
-    }
-
-    .list-unstyled a:hover {
-      color: #0d6efd;
-    }
-
-    .feature-card {
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-    }
-
-    .feature-icon {
-      transition: all 0.3s ease;
-    }
-
-    .feature-card:hover .feature-icon {
-      transform: scale(1.1);
-    }
-
-    .hover-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, rgba(104, 160, 99, 0.05) 0%, rgba(104, 160, 99, 0) 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .feature-card:hover .hover-overlay {
-      opacity: 1;
-    }
-  </style>
+  <link href="../assets/css/nodejs.css" rel="stylesheet">
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+  <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <h1 class="sitename">Jayesh Sukhadiya</h1>
       </a>
@@ -136,87 +80,71 @@
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
-
     </div>
-  </header> 
+  </header>
 
   <main class="main">
-
     <!-- Hero Section -->
-    <section id="hero" class="hero section py-5" style="background-color: #f8fafc; font-family: 'Poppins', sans-serif;">
+    <section id="hero" class="hero section py-5">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12 text-center mb-5">
-            <div class="hero-badge mb-3 d-inline-block py-1 px-3 rounded-pill"
-              style="background-color: rgba(104, 160, 99, 0.1); color: #68A063; font-weight: 500;">Backend Runtime
-            </div>
-            <h1 class="display-3 fw-bold mb-3"
-              style="color: #1a202c; font-family: 'latobold', Helvetica Neue, Helvetica;">Node.js <span
-                style="color: #68A063;">Development</span> Journey</h1>
-            <p class="lead mb-4" style="color: #4a5568; font-size: 1.25rem; max-width: 700px; margin: 0 auto;">Explore
-              the power of JavaScript on the server-side for building fast, scalable network applications</p>
+            <div class="hero-badge mb-3 d-inline-block py-1 px-3 rounded-pill">Backend Runtime</div>
+            <h1 class="display-3 fw-bold mb-3 hero-title">Node.js <span class="text-success">Development</span> Journey</h1>
+            <p class="lead mb-4 hero-subtitle">Explore the power of JavaScript on the server-side for building fast, scalable network applications</p>
             <div class="d-flex justify-content-center gap-3 mb-4">
-              <a href="#nodejs-basics" class="btn btn-primary px-4 py-2 rounded-pill"
-                style="background-color: #68A063; border: none; font-weight: 500;">Get Started</a>
-              <a href="#nodejs-resources" class="btn btn-outline-secondary px-4 py-2 rounded-pill"
-                style="border-color: #718096; color: #4a5568; font-weight: 500;">View Resources</a>
+              <a href="#nodejs-basics" class="btn btn-primary px-4 py-2 rounded-pill">Get Started</a>
+              <a href="#nodejs-resources" class="btn btn-outline-secondary px-4 py-2 rounded-pill">View Resources</a>
             </div>
           </div>
         </div>
 
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="card h-100 border-0 rounded-4 overflow-hidden"
-              style="box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-              <div class="card-header border-0 py-4"
-                style="background: linear-gradient(135deg, #68A063 0%, #8cc084 100%);">
-                <h3 class="text-white mb-0 text-center fw-bold" style="font-family: 'Raleway', sans-serif;">Basics</h3>
+            <div class="card h-100 border-0 rounded-4 overflow-hidden">
+              <div class="card-header border-0 py-4 card-header-basics">
+                <h3 class="text-white mb-0 text-center fw-bold">Basics</h3>
               </div>
               <div class="card-body p-4">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-fundamentals" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(104, 160, 99, 0.1);">
-                        <i class="bi bi-code-slash fs-5" style="color: #68A063;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-code-slash fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Core Fundamentals</span>
+                      <span>Core Fundamentals</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-modules" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(104, 160, 99, 0.1);">
-                        <i class="bi bi-box fs-5" style="color: #68A063;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-box fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Modules & NPM</span>
+                      <span>Modules & NPM</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-async" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(104, 160, 99, 0.1);">
-                        <i class="bi bi-arrow-repeat fs-5" style="color: #68A063;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-arrow-repeat fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Asynchronous Programming</span>
+                      <span>Asynchronous Programming</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-events" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(104, 160, 99, 0.1);">
-                        <i class="bi bi-broadcast fs-5" style="color: #68A063;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-broadcast fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Event-Driven Architecture</span>
+                      <span>Event-Driven Architecture</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-filesystem" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(104, 160, 99, 0.1);">
-                        <i class="bi bi-folder fs-5" style="color: #68A063;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-folder fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">File System Operations</span>
+                      <span>File System Operations</span>
                     </a>
                   </li>
                 </ul>
@@ -225,58 +153,50 @@
           </div>
 
           <div class="col-lg-4 col-md-6">
-            <div class="card h-100 border-0 rounded-4 overflow-hidden"
-              style="box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-              <div class="card-header border-0 py-4"
-                style="background: linear-gradient(135deg, #3182ce 0%, #63b3ed 100%);">
-                <h3 class="text-white mb-0 text-center fw-bold" style="font-family: 'Raleway', sans-serif;">Intermediate
-                </h3>
+            <div class="card h-100 border-0 rounded-4 overflow-hidden">
+              <div class="card-header border-0 py-4 card-header-intermediate">
+                <h3 class="text-white mb-0 text-center fw-bold">Intermediate</h3>
               </div>
               <div class="card-body p-4">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-express" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(49, 130, 206, 0.1);">
-                        <i class="bi bi-server fs-5" style="color: #3182ce;"></i>
+                      <span class="icon-wrapper me-3 bg-info bg-opacity-10">
+                        <i class="bi bi-server fs-5 icon-info"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Express.js Framework</span>
+                      <span>Express.js Framework</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-restapi" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(49, 130, 206, 0.1);">
-                        <i class="bi bi-hdd-network fs-5" style="color: #3182ce;"></i>
+                      <span class="icon-wrapper me-3 bg-info bg-opacity-10">
+                        <i class="bi bi-hdd-network fs-5 icon-info"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">RESTful API Development</span>
+                      <span>RESTful API Development</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-database" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(49, 130, 206, 0.1);">
-                        <i class="bi bi-database fs-5" style="color: #3182ce;"></i>
+                      <span class="icon-wrapper me-3 bg-info bg-opacity-10">
+                        <i class="bi bi-database fs-5 icon-info"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Database Integration</span>
+                      <span>Database Integration</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-authentication" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(49, 130, 206, 0.1);">
-                        <i class="bi bi-shield-lock fs-5" style="color: #3182ce;"></i>
+                      <span class="icon-wrapper me-3 bg-info bg-opacity-10">
+                        <i class="bi bi-shield-lock fs-5 icon-info"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Authentication & Authorization</span>
+                      <span>Authentication & Authorization</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-testing" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(49, 130, 206, 0.1);">
-                        <i class="bi bi-bug fs-5" style="color: #3182ce;"></i>
+                      <span class="icon-wrapper me-3 bg-info bg-opacity-10">
+                        <i class="bi bi-bug fs-5 icon-info"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Testing Strategies</span>
+                      <span>Testing Strategies</span>
                     </a>
                   </li>
                 </ul>
@@ -285,58 +205,50 @@
           </div>
 
           <div class="col-lg-4 col-md-6">
-            <div class="card h-100 border-0 rounded-4 overflow-hidden"
-              style="box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-              <div class="card-header border-0 py-4"
-                style="background: linear-gradient(135deg, #38a169 0%, #68d391 100%);">
-                <h3 class="text-white mb-0 text-center fw-bold" style="font-family: 'Raleway', sans-serif;">Advanced
-                </h3>
+            <div class="card h-100 border-0 rounded-4 overflow-hidden">
+              <div class="card-header border-0 py-4 card-header-advanced">
+                <h3 class="text-white mb-0 text-center fw-bold">Advanced</h3>
               </div>
               <div class="card-body p-4">
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-microservices" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(56, 161, 105, 0.1);">
-                        <i class="bi bi-diagram-3 fs-5" style="color: #38a169;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-diagram-3 fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Microservices Architecture</span>
+                      <span>Microservices Architecture</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-performance" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(56, 161, 105, 0.1);">
-                        <i class="bi bi-speedometer2 fs-5" style="color: #38a169;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-speedometer2 fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Performance Optimization</span>
+                      <span>Performance Optimization</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-security" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(56, 161, 105, 0.1);">
-                        <i class="bi bi-shield-check fs-5" style="color: #38a169;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-shield-check fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Security Best Practices</span>
+                      <span>Security Best Practices</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-realtime" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(56, 161, 105, 0.1);">
-                        <i class="bi bi-lightning fs-5" style="color: #38a169;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-lightning fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Real-time Applications</span>
+                      <span>Real-time Applications</span>
                     </a>
                   </li>
-                  <li class="list-group-item border-0 px-0 py-3">
+                  <li class="list-group-item">
                     <a href="#nodejs-deployment" class="d-flex align-items-center text-decoration-none">
-                      <span class="icon-wrapper me-3 d-flex align-items-center justify-content-center rounded-circle"
-                        style="width: 36px; height: 36px; background-color: rgba(56, 161, 105, 0.1);">
-                        <i class="bi bi-cloud-upload fs-5" style="color: #38a169;"></i>
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-cloud-upload fs-5 icon-success"></i>
                       </span>
-                      <span style="color: #4a5568; font-weight: 500; transition: color 0.2s ease;">Deployment & DevOps</span>
+                      <span>Deployment & DevOps</span>
                     </a>
                   </li>
                 </ul>
@@ -346,23 +258,20 @@
         </div>
       </div>
     </section>
+
     <!-- Node.js Sections -->
     <section id="nodejs-basics" class="section py-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-            <h2 class="display-4 fw-bold mb-3" 
-              style="color: #1a202c; font-family: 'Poppins', sans-serif;">Node.js Fundamentals</h2>
-            <p class="section-subtitle lead text-muted" 
-              style="font-family: 'Open Sans', sans-serif; max-width: 800px; margin: 0 auto;">Master the core concepts of Node.js and understand what makes it a powerful runtime for building server-side applications.</p>
+            <h2 class="display-4 fw-bold mb-3 section-title">Node.js Fundamentals</h2>
+            <p class="section-subtitle lead text-muted">Master the core concepts of Node.js and understand what makes it a powerful runtime for building server-side applications.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center"
-              style="border-top: 4px solid #38a169;">
-              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto"
-                style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-cpu fs-2" style="color: #38a169;"></i>
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-cpu fs-2 icon-success"></i>
               </div>
               <h3 class="feature-title h4 mb-3 fw-bold">Event-Driven Architecture</h3>
               <p class="feature-description mb-0 text-muted">Understand Node's non-blocking I/O model and how it handles concurrent operations efficiently.</p>
@@ -370,11 +279,9 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center"
-              style="border-top: 4px solid #38a169;">
-              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto"
-                style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-box fs-2" style="color: #38a169;"></i>
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-box fs-2 icon-success"></i>
               </div>
               <h3 class="feature-title h4 mb-3 fw-bold">NPM Ecosystem</h3>
               <p class="feature-description mb-0 text-muted">Learn to use npm for package management, dependency handling, and script automation.</p>
@@ -382,11 +289,9 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center"
-              style="border-top: 4px solid #38a169;">
-              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto"
-                style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-hdd-network fs-2" style="color: #38a169;"></i>
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-hdd-network fs-2 icon-success"></i>
               </div>
               <h3 class="feature-title h4 mb-3 fw-bold">Core Modules</h3>
               <p class="feature-description mb-0 text-muted">Explore built-in modules like fs, http, path, and util for common server-side operations.</p>
@@ -400,18 +305,14 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
-            <h2 class="display-4 fw-bold mb-3" 
-              style="color: #1a202c; font-family: 'Poppins', sans-serif;">Express.js Framework</h2>
-            <p class="section-subtitle lead text-muted" 
-              style="font-family: 'Open Sans', sans-serif; max-width: 800px; margin: 0 auto;">Build robust web applications with Express.js, the most popular Node.js framework for creating APIs and web servers.</p>
+            <h2 class="display-4 fw-bold mb-3 section-title">Express.js Framework</h2>
+            <p class="section-subtitle lead text-muted">Build robust web applications with Express.js, the most popular Node.js framework for creating APIs and web servers.</p>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center"
-              style="border-top: 4px solid #38a169;">
-              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto"
-                style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-signpost-split fs-2" style="color: #38a169;"></i>
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-signpost-split fs-2 icon-success"></i>
               </div>
               <h3 class="feature-title h4 mb-3 fw-bold">Routing</h3>
               <p class="feature-description mb-0 text-muted">Create clean and organized routes to handle different HTTP methods and endpoints.</p>
@@ -419,11 +320,9 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center"
-              style="border-top: 4px solid #38a169;">
-              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto"
-                style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-layers fs-2" style="color: #38a169;"></i>
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-layers fs-2 icon-success"></i>
               </div>
               <h3 class="feature-title h4 mb-3 fw-bold">Middleware</h3>
               <p class="feature-description mb-0 text-muted">Leverage middleware functions for request processing, authentication, and error handling.</p>
@@ -431,14 +330,138 @@
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center"
-              style="border-top: 4px solid #38a169;">
-              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto"
-                style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;">
-                <i class="bi bi-braces fs-2" style="color: #38a169;"></i>
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-braces fs-2 icon-success"></i>
               </div>
               <h3 class="feature-title h4 mb-3 fw-bold">Template Engines</h3>
               <p class="feature-description mb-0 text-muted">Integrate view engines like EJS, Pug, or Handlebars for dynamic HTML generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced Node.js Concepts -->
+    <section id="nodejs-advanced" class="section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold mb-3 section-title">Advanced Node.js Concepts</h2>
+            <p class="section-subtitle lead text-muted">Dive deep into advanced Node.js concepts and patterns for building enterprise-grade applications.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-diagram-3 fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Streams & Buffers</h3>
+              <p class="feature-description mb-0 text-muted">Master Node.js streams for efficient data handling, including readable, writable, duplex, and transform streams.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-cpu fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Worker Threads</h3>
+              <p class="feature-description mb-0 text-muted">Learn to use worker threads for CPU-intensive tasks and parallel processing in Node.js applications.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-shield-check fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Security Patterns</h3>
+              <p class="feature-description mb-0 text-muted">Implement security best practices including input validation, rate limiting, and secure headers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Performance Optimization -->
+    <section id="nodejs-performance" class="section py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold mb-3 section-title">Performance Optimization</h2>
+            <p class="section-subtitle lead text-muted">Learn techniques to optimize Node.js applications for maximum performance and scalability.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-speedometer2 fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Memory Management</h3>
+              <p class="feature-description mb-0 text-muted">Optimize memory usage with proper garbage collection, memory leaks prevention, and heap analysis.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-graph-up fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Caching Strategies</h3>
+              <p class="feature-description mb-0 text-muted">Implement effective caching using Redis, memory caching, and CDN integration for better performance.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-cluster fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Load Balancing</h3>
+              <p class="feature-description mb-0 text-muted">Scale applications horizontally using PM2, Nginx, and Docker for high availability and load distribution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-world Applications -->
+    <section id="nodejs-applications" class="section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold mb-3 section-title">Real-world Applications</h2>
+            <p class="section-subtitle lead text-muted">Explore practical applications and use cases of Node.js in modern web development.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-chat-dots fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Real-time Applications</h3>
+              <p class="feature-description mb-0 text-muted">Build real-time features using Socket.io, WebSockets, and Server-Sent Events for chat, gaming, and live updates.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-cloud fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Microservices</h3>
+              <p class="feature-description mb-0 text-muted">Design and implement microservices architecture using Docker, Kubernetes, and service mesh patterns.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-file-earmark-code fs-2 icon-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">API Development</h3>
+              <p class="feature-description mb-0 text-muted">Create robust RESTful and GraphQL APIs with proper documentation, versioning, and rate limiting.</p>
             </div>
           </div>
         </div>
@@ -468,8 +491,9 @@
   </main>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Vendor JS Files -->
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
