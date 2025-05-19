@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Event-Driven Architecture - Jayesh Sukhadiya</title>
+    <meta name="description" content="Learn about Event-Driven Architecture in Node.js, including the EventEmitter class, custom events, and event patterns.">
+    
+    <!-- Favicons -->
+    <link href="../../../assets/img/favicon.png" rel="icon">
+    <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    <!-- Main CSS Files -->
+    <link href="../../../assets/css/main.css" rel="stylesheet">
+    <link href="../../../assets/css/nodejs.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <!-- Header content from main page -->
+    </header>
+
+    <main class="main" id="nodejs-main">
+        <section class="hero section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h1 class="display-3 fw-bold mb-3 hero-title">Event-Driven Architecture in Node.js</h1>
+                        <p class="lead mb-4 hero-subtitle">Understanding the power of events in Node.js applications</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <article class="blog-post">
+                            <h2 class="section-title">Understanding Event-Driven Architecture</h2>
+                            <p class="lead">Node.js is built on an event-driven architecture, which makes it highly efficient for handling concurrent operations. This pattern allows for loose coupling between components and enables scalable applications.</p>
+
+                            <div class="diagram-container my-4">
+                                <img src="../../../assets/img/nodejs/event-driven.png" alt="Event-Driven Architecture Diagram" class="img-fluid rounded">
+                                <p class="text-muted text-center mt-2">Figure 1: Event-Driven Architecture Flow</p>
+                            </div>
+
+                            <h3 class="mt-5">The EventEmitter Class</h3>
+                            <p>The EventEmitter class is the foundation of Node.js's event-driven architecture. It provides the ability to emit and listen for events.</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+const EventEmitter = require('events');
+
+// Create a custom event emitter
+class MyEmitter extends EventEmitter {}
+const myEmitter = new MyEmitter();
+
+// Register a listener
+myEmitter.on('event', (arg1, arg2) => {
+    console.log('Event occurred with args:', arg1, arg2);
+});
+
+// Emit the event
+myEmitter.emit('event', 'arg1 value', 'arg2 value');
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Event Patterns</h3>
+                            <p>There are several common patterns for working with events in Node.js:</p>
+
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title">Common Event Patterns</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Observer Pattern</li>
+                                        <li class="list-group-item">Pub/Sub Pattern</li>
+                                        <li class="list-group-item">Event Sourcing</li>
+                                        <li class="list-group-item">Command Pattern</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of Pub/Sub pattern
+class MessageBroker extends EventEmitter {
+    constructor() {
+        super();
+        this.subscribers = new Map();
+    }
+
+    subscribe(topic, callback) {
+        if (!this.subscribers.has(topic)) {
+            this.subscribers.set(topic, []);
+        }
+        this.subscribers.get(topic).push(callback);
+    }
+
+    publish(topic, message) {
+        if (this.subscribers.has(topic)) {
+            this.subscribers.get(topic).forEach(callback => {
+                callback(message);
+            });
+        }
+    }
+}
+
+// Usage
+const broker = new MessageBroker();
+
+// Subscribe to a topic
+broker.subscribe('news', (message) => {
+    console.log('Received news:', message);
+});
+
+// Publish to a topic
+broker.publish('news', 'Breaking news: Node.js 20 released!');
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Error Handling in Events</h3>
+                            <p>Proper error handling is crucial in event-driven systems. Here's how to handle errors in events:</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+const emitter = new EventEmitter();
+
+// Handle errors
+emitter.on('error', (err) => {
+    console.error('Error occurred:', err);
+});
+
+// Emit error event
+emitter.emit('error', new Error('Something went wrong'));
+
+// Using try-catch with async event handlers
+emitter.on('asyncEvent', async (data) => {
+    try {
+        await processData(data);
+    } catch (err) {
+        emitter.emit('error', err);
+    }
+});
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Event Best Practices</h3>
+                            <div class="alert alert-info">
+                                <h4 class="alert-heading">Event-Driven Architecture Best Practices</h4>
+                                <ul class="mb-0">
+                                    <li>Use meaningful event names</li>
+                                    <li>Implement proper error handling</li>
+                                    <li>Avoid too many event listeners</li>
+                                    <li>Use event namespaces</li>
+                                    <li>Implement event validation</li>
+                                </ul>
+                            </div>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of event validation and namespacing
+class ValidatedEmitter extends EventEmitter {
+    constructor() {
+        super();
+        this.validators = new Map();
+    }
+
+    addValidator(eventName, validator) {
+        this.validators.set(eventName, validator);
+    }
+
+    emit(eventName, ...args) {
+        const validator = this.validators.get(eventName);
+        if (validator && !validator(...args)) {
+            this.emit('error', new Error(`Invalid event data for ${eventName}`));
+            return false;
+        }
+        return super.emit(eventName, ...args);
+    }
+}
+
+// Usage
+const emitter = new ValidatedEmitter();
+
+// Add validator
+emitter.addValidator('user:created', (user) => {
+    return user && user.id && user.name;
+});
+
+// Emit validated event
+emitter.emit('user:created', { id: 1, name: 'John' });
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Real-World Applications</h3>
+                            <p>Event-driven architecture is used in various real-world scenarios:</p>
+
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title">Common Use Cases</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Real-time applications</li>
+                                        <li class="list-group-item">Microservices communication</li>
+                                        <li class="list-group-item">Logging and monitoring</li>
+                                        <li class="list-group-item">Plugin systems</li>
+                                        <li class="list-group-item">State management</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning mt-4">
+                                <h4 class="alert-heading">Performance Considerations</h4>
+                                <ul class="mb-0">
+                                    <li>Monitor event listener count</li>
+                                    <li>Use event debouncing when needed</li>
+                                    <li>Implement proper cleanup</li>
+                                    <li>Consider memory usage</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer py-4 bg-light mt-5">
+        <!-- Footer content from main page -->
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/vendor/aos/aos.js"></script>
+    <script src="../../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html> 

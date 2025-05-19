@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Asynchronous Programming - Jayesh Sukhadiya</title>
+    <meta name="description" content="Learn about asynchronous programming in Node.js, including callbacks, promises, and async/await patterns.">
+    
+    <!-- Favicons -->
+    <link href="../../../assets/img/favicon.png" rel="icon">
+    <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    <!-- Main CSS Files -->
+    <link href="../../../assets/css/main.css" rel="stylesheet">
+    <link href="../../../assets/css/nodejs.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #1976D2;
+            --accent-color: #FF4081;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --code-bg: #1e1e1e;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../../../assets/img/nodejs/pattern.png');
+            opacity: 0.1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        .blog-post {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .code-example {
+            background: var(--code-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .code-example::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 10px 10px 0 0;
+        }
+
+        .code-example pre {
+            margin: 0;
+            color: #fff;
+        }
+
+        .alert {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+
+        .alert-warning {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .alert-info {
+            background: #e3f2fd;
+            color: #0d47a1;
+        }
+
+        .alert-heading {
+            color: inherit;
+            font-weight: 600;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px !important;
+            background: var(--light-bg);
+            transition: all 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            transform: translateX(10px);
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .list-group-item::before {
+            content: '→';
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .diagram-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .diagram-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .diagram-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .blog-post {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <!-- Header content from main page -->
+    </header>
+
+    <main class="main" id="nodejs-main">
+        <section class="hero section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h1 class="display-3 fw-bold mb-3 hero-title">Asynchronous Programming in Node.js</h1>
+                        <p class="lead mb-4 hero-subtitle">Master the art of handling asynchronous operations in Node.js</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <article class="blog-post">
+                            <h2 class="section-title">Understanding Asynchronous Programming</h2>
+                            <p class="lead">Node.js is built on an event-driven, non-blocking I/O model that makes it lightweight and efficient. Understanding asynchronous programming is crucial for building scalable applications.</p>
+
+                            <div class="diagram-container my-4">
+                                <img src="../../../assets/img/nodejs/async-flow.png" alt="Asynchronous Flow Diagram" class="img-fluid rounded">
+                                <p class="text-muted text-center mt-2">Figure 1: Asynchronous vs Synchronous Flow</p>
+                            </div>
+
+                            <h3 class="mt-5">Callbacks</h3>
+                            <p>Callbacks are the traditional way of handling asynchronous operations in Node.js. They are functions that are passed as arguments to other functions and are executed after the main function has finished.</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of callback pattern
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading file:', err);
+        return;
+    }
+    console.log('File contents:', data);
+});
+
+console.log('Reading file...'); // This runs first
+                                </code></pre>
+                            </div>
+
+                            <div class="alert alert-warning">
+                                <h4 class="alert-heading">Callback Hell</h4>
+                                <p>Nested callbacks can lead to "callback hell" - a situation where code becomes difficult to read and maintain.</p>
+                                <div class="code-example mt-3">
+                                    <pre><code class="language-javascript">
+// Example of callback hell
+fs.readFile('file1.txt', (err, data1) => {
+    if (err) return console.error(err);
+    fs.readFile('file2.txt', (err, data2) => {
+        if (err) return console.error(err);
+        fs.readFile('file3.txt', (err, data3) => {
+            if (err) return console.error(err);
+            // Process all data
+        });
+    });
+});
+                                    </code></pre>
+                                </div>
+                            </div>
+
+                            <h3 class="mt-5">Promises</h3>
+                            <p>Promises provide a cleaner way to handle asynchronous operations. They represent a value that may not be available yet but will be resolved at some point in the future.</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of Promise usage
+const fs = require('fs').promises;
+
+fs.readFile('file.txt', 'utf8')
+    .then(data => {
+        console.log('File contents:', data);
+    })
+    .catch(err => {
+        console.error('Error reading file:', err);
+    });
+
+console.log('Reading file...'); // This runs first
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Async/Await</h3>
+                            <p>Async/await is a modern way to handle asynchronous operations, making the code look more synchronous and easier to understand.</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of async/await
+const fs = require('fs').promises;
+
+async function readFiles() {
+    try {
+        const data1 = await fs.readFile('file1.txt', 'utf8');
+        const data2 = await fs.readFile('file2.txt', 'utf8');
+        const data3 = await fs.readFile('file3.txt', 'utf8');
+        
+        console.log('All files read successfully');
+        return [data1, data2, data3];
+    } catch (err) {
+        console.error('Error reading files:', err);
+        throw err;
+    }
+}
+
+// Using the async function
+readFiles()
+    .then(results => console.log('Results:', results))
+    .catch(err => console.error('Error:', err));
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Error Handling</h3>
+                            <p>Proper error handling is crucial in asynchronous programming. Here are different approaches:</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Error handling with callbacks
+fs.readFile('file.txt', (err, data) => {
+    if (err) {
+        console.error('Error:', err);
+        return;
+    }
+    // Process data
+});
+
+// Error handling with Promises
+fs.readFile('file.txt')
+    .then(data => {
+        // Process data
+    })
+    .catch(err => {
+        console.error('Error:', err);
+    });
+
+// Error handling with async/await
+async function readFile() {
+    try {
+        const data = await fs.readFile('file.txt');
+        // Process data
+    } catch (err) {
+        console.error('Error:', err);
+    }
+}
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Best Practices</h3>
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title">Asynchronous Programming Best Practices</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Use async/await for cleaner code</li>
+                                        <li class="list-group-item">Always handle errors properly</li>
+                                        <li class="list-group-item">Avoid callback hell</li>
+                                        <li class="list-group-item">Use Promise.all for parallel operations</li>
+                                        <li class="list-group-item">Keep async functions focused</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of parallel operations with Promise.all
+async function processFiles() {
+    try {
+        const [data1, data2, data3] = await Promise.all([
+            fs.readFile('file1.txt', 'utf8'),
+            fs.readFile('file2.txt', 'utf8'),
+            fs.readFile('file3.txt', 'utf8')
+        ]);
+        
+        console.log('All files processed in parallel');
+        return { data1, data2, data3 };
+    } catch (err) {
+        console.error('Error processing files:', err);
+        throw err;
+    }
+}
+                                </code></pre>
+                            </div>
+
+                            <div class="alert alert-info mt-4">
+                                <h4 class="alert-heading">Performance Tips</h4>
+                                <ul class="mb-0">
+                                    <li>Use Promise.all for parallel operations</li>
+                                    <li>Avoid unnecessary async/await</li>
+                                    <li>Consider using streams for large files</li>
+                                    <li>Implement proper error boundaries</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer py-4 bg-light mt-5">
+        <!-- Footer content from main page -->
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/vendor/aos/aos.js"></script>
+    <script src="../../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html> 

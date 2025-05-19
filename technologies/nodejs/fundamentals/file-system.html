@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js File System Operations - Jayesh Sukhadiya</title>
+    <meta name="description" content="Learn about File System Operations in Node.js, including file reading, writing, streams, and best practices.">
+    
+    <!-- Favicons -->
+    <link href="../../../assets/img/favicon.png" rel="icon">
+    <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    <!-- Main CSS Files -->
+    <link href="../../../assets/css/main.css" rel="stylesheet">
+    <link href="../../../assets/css/nodejs.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <!-- Header content from main page -->
+    </header>
+
+    <main class="main" id="nodejs-main">
+        <section class="hero section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h1 class="display-3 fw-bold mb-3 hero-title">File System Operations in Node.js</h1>
+                        <p class="lead mb-4 hero-subtitle">Master file handling and manipulation in Node.js</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <article class="blog-post">
+                            <h2 class="section-title">Understanding File System Operations</h2>
+                            <p class="lead">Node.js provides a comprehensive set of file system operations through the `fs` module, allowing you to work with files and directories in both synchronous and asynchronous ways.</p>
+
+                            <div class="diagram-container my-4">
+                                <img src="../../../assets/img/nodejs/file-system.png" alt="File System Operations Diagram" class="img-fluid rounded">
+                                <p class="text-muted text-center mt-2">Figure 1: File System Operations Flow</p>
+                            </div>
+
+                            <h3 class="mt-5">Basic File Operations</h3>
+                            <p>Node.js provides both synchronous and asynchronous methods for basic file operations:</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+const fs = require('fs');
+
+// Reading a file
+fs.readFile('file.txt', 'utf8', (err, data) => {
+    if (err) {
+        console.error('Error reading file:', err);
+        return;
+    }
+    console.log('File contents:', data);
+});
+
+// Writing to a file
+fs.writeFile('output.txt', 'Hello, World!', 'utf8', (err) => {
+    if (err) {
+        console.error('Error writing file:', err);
+        return;
+    }
+    console.log('File written successfully');
+});
+
+// Appending to a file
+fs.appendFile('log.txt', 'New log entry\n', 'utf8', (err) => {
+    if (err) {
+        console.error('Error appending to file:', err);
+        return;
+    }
+    console.log('Log entry added');
+});
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Working with Streams</h3>
+                            <p>Streams are efficient for handling large files and real-time data processing:</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+const fs = require('fs');
+
+// Reading a large file using streams
+const readStream = fs.createReadStream('large-file.txt', 'utf8');
+const writeStream = fs.createWriteStream('output.txt');
+
+readStream.on('data', (chunk) => {
+    console.log('Received chunk:', chunk.length);
+    writeStream.write(chunk);
+});
+
+readStream.on('end', () => {
+    writeStream.end();
+    console.log('File processing complete');
+});
+
+readStream.on('error', (err) => {
+    console.error('Error reading file:', err);
+});
+
+writeStream.on('error', (err) => {
+    console.error('Error writing file:', err);
+});
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Directory Operations</h3>
+                            <p>Node.js provides methods for working with directories:</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+const fs = require('fs');
+const path = require('path');
+
+// Creating a directory
+fs.mkdir('new-directory', (err) => {
+    if (err) {
+        console.error('Error creating directory:', err);
+        return;
+    }
+    console.log('Directory created');
+});
+
+// Reading directory contents
+fs.readdir('directory', (err, files) => {
+    if (err) {
+        console.error('Error reading directory:', err);
+        return;
+    }
+    console.log('Directory contents:', files);
+});
+
+// Recursive directory operations
+function processDirectory(dirPath) {
+    const items = fs.readdirSync(dirPath);
+    
+    items.forEach(item => {
+        const fullPath = path.join(dirPath, item);
+        const stats = fs.statSync(fullPath);
+        
+        if (stats.isDirectory()) {
+            processDirectory(fullPath);
+        } else {
+            console.log('Processing file:', fullPath);
+        }
+    });
+}
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">File System Best Practices</h3>
+                            <div class="alert alert-info">
+                                <h4 class="alert-heading">File System Best Practices</h4>
+                                <ul class="mb-0">
+                                    <li>Use streams for large files</li>
+                                    <li>Implement proper error handling</li>
+                                    <li>Use async operations when possible</li>
+                                    <li>Handle file paths correctly</li>
+                                    <li>Implement proper cleanup</li>
+                                </ul>
+                            </div>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of a robust file operation function
+async function safeFileOperation(operation) {
+    try {
+        await operation();
+    } catch (err) {
+        console.error('Operation failed:', err);
+        // Implement retry logic or fallback
+    } finally {
+        // Cleanup resources
+    }
+}
+
+// Usage
+safeFileOperation(async () => {
+    const data = await fs.promises.readFile('file.txt', 'utf8');
+    await fs.promises.writeFile('output.txt', data);
+});
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Advanced File Operations</h3>
+                            <p>Node.js provides advanced file system capabilities:</p>
+
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title">Advanced Features</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">File watching</li>
+                                        <li class="list-group-item">File permissions</li>
+                                        <li class="list-group-item">Symbolic links</li>
+                                        <li class="list-group-item">File locking</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// File watching example
+const watcher = fs.watch('directory', (eventType, filename) => {
+    console.log(`File ${filename} changed. Event: ${eventType}`);
+});
+
+// File permissions
+fs.chmod('file.txt', 0o644, (err) => {
+    if (err) {
+        console.error('Error changing permissions:', err);
+        return;
+    }
+    console.log('Permissions changed');
+});
+
+// Symbolic links
+fs.symlink('target.txt', 'link.txt', (err) => {
+    if (err) {
+        console.error('Error creating symlink:', err);
+        return;
+    }
+    console.log('Symbolic link created');
+});
+                                </code></pre>
+                            </div>
+
+                            <div class="alert alert-warning mt-4">
+                                <h4 class="alert-heading">Security Considerations</h4>
+                                <ul class="mb-0">
+                                    <li>Validate file paths</li>
+                                    <li>Check file permissions</li>
+                                    <li>Handle file size limits</li>
+                                    <li>Implement proper access control</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer py-4 bg-light mt-5">
+        <!-- Footer content from main page -->
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/vendor/aos/aos.js"></script>
+    <script src="../../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html> 

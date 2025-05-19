@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Modules & NPM - Jayesh Sukhadiya</title>
+    <meta name="description" content="Learn about Node.js modules system and NPM package manager, including module creation, publishing, and best practices.">
+    
+    <!-- Favicons -->
+    <link href="../../../assets/img/favicon.png" rel="icon">
+    <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    <!-- Main CSS Files -->
+    <link href="../../../assets/css/main.css" rel="stylesheet">
+    <link href="../../../assets/css/nodejs.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <!-- Header content from main page -->
+    </header>
+
+    <main class="main" id="nodejs-main">
+        <section class="hero section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h1 class="display-3 fw-bold mb-3 hero-title">Node.js Modules & NPM</h1>
+                        <p class="lead mb-4 hero-subtitle">Understanding Node.js module system and package management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <article class="blog-post">
+                            <h2 class="section-title">Understanding Node.js Modules</h2>
+                            <p class="lead">Node.js uses a module system based on CommonJS, which allows you to split your code into reusable pieces and manage dependencies effectively.</p>
+
+                            <h3 class="mt-5">Module Types</h3>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Description</th>
+                                            <th>Example</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Core Modules</td>
+                                            <td>Built-in Node.js modules</td>
+                                            <td>fs, http, path</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Local Modules</td>
+                                            <td>Custom modules in your project</td>
+                                            <td>./utils/helper.js</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Third-party Modules</td>
+                                            <td>Installed from npm</td>
+                                            <td>express, lodash</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <h3 class="mt-5">Creating and Using Modules</h3>
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// math.js - Module definition
+const add = (a, b) => a + b;
+const subtract = (a, b) => a - b;
+
+module.exports = {
+    add,
+    subtract
+};
+
+// app.js - Using the module
+const math = require('./math');
+console.log(math.add(5, 3));      // Output: 8
+console.log(math.subtract(5, 3)); // Output: 2
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">NPM (Node Package Manager)</h3>
+                            <p>NPM is the default package manager for Node.js, providing access to thousands of reusable packages and tools for managing dependencies.</p>
+
+                            <div class="alert alert-info">
+                                <h4 class="alert-heading">Key NPM Commands</h4>
+                                <ul class="mb-0">
+                                    <li><code>npm init</code> - Initialize a new project</li>
+                                    <li><code>npm install</code> - Install dependencies</li>
+                                    <li><code>npm update</code> - Update packages</li>
+                                    <li><code>npm publish</code> - Publish a package</li>
+                                </ul>
+                            </div>
+
+                            <h3 class="mt-5">package.json</h3>
+                            <p>The package.json file is the heart of any Node.js project, containing metadata and dependency information.</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-json">
+{
+  "name": "my-nodejs-app",
+  "version": "1.0.0",
+  "description": "A sample Node.js application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12"
+  }
+}
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Module Resolution</h3>
+                            <p>Node.js follows a specific algorithm to resolve module paths:</p>
+                            <ol class="list-group list-group-numbered mb-4">
+                                <li class="list-group-item">Core modules (built-in)</li>
+                                <li class="list-group-item">node_modules directory</li>
+                                <li class="list-group-item">Parent directory's node_modules</li>
+                                <li class="list-group-item">Global node_modules</li>
+                            </ol>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Different ways to require modules
+const fs = require('fs');                    // Core module
+const express = require('express');          // Third-party module
+const utils = require('./utils');            // Local module
+const config = require('../config');         // Parent directory
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Best Practices</h3>
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title">Module Organization</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Keep modules focused and single-purpose</li>
+                                        <li class="list-group-item">Use meaningful names for modules</li>
+                                        <li class="list-group-item">Export only what's necessary</li>
+                                        <li class="list-group-item">Document module usage</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h4 class="card-title">NPM Best Practices</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Use semantic versioning</li>
+                                        <li class="list-group-item">Lock dependencies with package-lock.json</li>
+                                        <li class="list-group-item">Regularly update dependencies</li>
+                                        <li class="list-group-item">Use .npmrc for configuration</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning mt-4">
+                                <h4 class="alert-heading">Security Considerations</h4>
+                                <ul class="mb-0">
+                                    <li>Regularly audit dependencies with <code>npm audit</code></li>
+                                    <li>Use <code>npm ci</code> for clean installs in CI/CD</li>
+                                    <li>Be cautious with global installations</li>
+                                    <li>Verify package integrity</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer py-4 bg-light mt-5">
+        <!-- Footer content from main page -->
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/vendor/aos/aos.js"></script>
+    <script src="../../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html> 

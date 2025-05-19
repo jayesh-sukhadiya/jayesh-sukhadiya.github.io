@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js Core Fundamentals - Jayesh Sukhadiya</title>
+    <meta name="description" content="Learn about Node.js core fundamentals, including V8 engine, event loop, and non-blocking I/O model.">
+    
+    <!-- Favicons -->
+    <link href="../../../assets/img/favicon.png" rel="icon">
+    <link href="../../../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+    <!-- Main CSS Files -->
+    <link href="../../../assets/css/main.css" rel="stylesheet">
+    <link href="../../../assets/css/nodejs.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #339933;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #2c3e50;
+            --light-bg: #f8f9fa;
+        }
+
+        .hero {
+            background: #e3f2fd;
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../../../assets/img/nodejs/pattern.png');
+            opacity: 0.1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+        }
+
+        .code-example {
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .code-example pre {
+            margin: 0;
+            color: #fff;
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px !important;
+            background: var(--light-bg);
+            transition: transform 0.2s;
+        }
+
+        .list-group-item:hover {
+            transform: translateX(10px);
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .list-group-item strong {
+            color: var(--primary-color);
+        }
+
+        .diagram-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            margin: 40px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .diagram-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .diagram-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .diagram-container img:hover {
+            transform: scale(1.02);
+        }
+
+        .diagram-container p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .diagram-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 15px 15px 0 0;
+        }
+
+        .alert {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .alert-info {
+            background: #e3f2fd;
+            color: #0d47a1;
+        }
+
+        .alert-heading {
+            color: #0d47a1;
+            font-weight: 600;
+        }
+
+        .blog-post {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .blog-post {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <!-- Header content from main page -->
+    </header>
+
+    <main class="main" id="nodejs-main">
+        <section class="hero section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-center mb-5">
+                        <h1 class="display-3 fw-bold mb-3 hero-title">Node.js Core Fundamentals</h1>
+                        <p class="lead mb-4 hero-subtitle">Understanding the building blocks of Node.js runtime environment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <article class="blog-post">
+                            <h2 class="section-title">The V8 JavaScript Engine</h2>
+                            <p class="lead">Node.js is built on top of the V8 JavaScript engine, which is the same engine that powers Google Chrome. This engine is responsible for compiling JavaScript code into machine code that can be executed by the computer.</p>
+                            
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of V8's JIT compilation
+function calculateSum(n) {
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
+
+// This function will be optimized by V8
+console.log(calculateSum(1000000));
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Event Loop and Non-blocking I/O</h3>
+                            <p>Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. The event loop is the mechanism that allows Node.js to perform non-blocking I/O operations despite JavaScript being single-threaded.</p>
+
+                            <div class="diagram-container my-4 position-relative">
+                                <img src="../../../assets/img/nodejs/event-loop.png" 
+                                     alt="Node.js Event Loop Diagram" 
+                                     class="img-fluid rounded"
+                                     loading="lazy"
+                                     onerror="this.onerror=null; this.src='../../../assets/img/placeholder.png';">
+                                <p class="text-muted text-center mt-3 mb-0">Figure 1: Node.js Event Loop Architecture</p>
+                            </div>
+
+                            <h3 class="mt-5">Core Modules</h3>
+                            <p>Node.js comes with several built-in modules that provide essential functionality:</p>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <strong>http</strong> - Create HTTP servers and clients
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>fs</strong> - File system operations
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>path</strong> - File path manipulation
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>events</strong> - Event handling
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>stream</strong> - Streaming data
+                                </li>
+                            </ul>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of using core modules
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+const server = http.createServer((req, res) => {
+    const filePath = path.join(__dirname, 'index.html');
+    fs.readFile(filePath, (err, content) => {
+        if (err) {
+            res.writeHead(500);
+            res.end('Error loading index.html');
+            return;
+        }
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(content);
+    });
+});
+
+server.listen(3000, () => {
+    console.log('Server running at http://localhost:3000/');
+});
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Global Objects</h3>
+                            <p>Node.js provides several global objects that are available in all modules:</p>
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item">
+                                    <strong>global</strong> - The global namespace object
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>process</strong> - Information about the current Node.js process
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>console</strong> - Console output
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Buffer</strong> - Binary data handling
+                                </li>
+                            </ul>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of using global objects
+console.log('Current directory:', process.cwd());
+console.log('Node version:', process.version);
+console.log('Platform:', process.platform);
+
+// Working with Buffer
+const buf = Buffer.from('Hello, Node.js!');
+console.log(buf.toString());
+                                </code></pre>
+                            </div>
+
+                            <h3 class="mt-5">Error Handling</h3>
+                            <p>Node.js uses a callback-based error handling pattern where the first argument of a callback function is reserved for an error object:</p>
+
+                            <div class="code-example my-4">
+                                <pre><code class="language-javascript">
+// Example of error handling
+const fs = require('fs');
+
+fs.readFile('nonexistent.txt', (err, data) => {
+    if (err) {
+        console.error('Error reading file:', err.message);
+        return;
+    }
+    console.log(data);
+});
+
+// Using try-catch with async/await
+async function readFile() {
+    try {
+        const data = await fs.promises.readFile('file.txt');
+        console.log(data);
+    } catch (err) {
+        console.error('Error:', err.message);
+    }
+}
+                                </code></pre>
+                            </div>
+
+                            <div class="alert alert-info mt-4">
+                                <h4 class="alert-heading">Best Practices</h4>
+                                <ul class="mb-0">
+                                    <li>Always handle errors in callbacks</li>
+                                    <li>Use async/await for cleaner error handling</li>
+                                    <li>Implement proper error logging</li>
+                                    <li>Use try-catch blocks for synchronous code</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer py-4 bg-light mt-5">
+        <!-- Footer content from main page -->
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="../../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/vendor/aos/aos.js"></script>
+    <script src="../../../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../../../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html> 
