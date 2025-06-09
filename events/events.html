@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - EasyFolio Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Jayesh Sukhadiya - Full Stack Developer & Software Engineer</title>
+  <meta name="description" content="Experienced Full Stack Developer and Software Engineer specializing in web development, cloud solutions, and enterprise applications. View my portfolio, skills and projects.">
+  <meta name="keywords" content="full stack developer, software engineer, web developer, JavaScript, Python, React, Node.js, cloud computing, DevOps, software development, programming, coding, tech portfolio">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -18,17 +18,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="../assets/css/main.css" rel="stylesheet">
+ 
 </head>
 
-<body class="portfolio-details-page">
+<body class="index-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -36,33 +39,34 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">EasyFolio</h1>
+        <h1 class="sitename">Jayesh Sukhadiya</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home</a></li>
+          <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#services">Services</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#skills"><span>Technologies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="./laravel.html">Laravel</a></li>
+              <li><a href="./nodejs.html">Node.js</a></li>
+              <li><a href="./angular.html">Angular</a></li>
+              <li><a href="./nextjs.html">Next.js</a></li>
+              <li><a href="./reactjs.html">React.js</a></li>
+              <li><a href="/tailwind.html">Tailwind CSS</a></li>
+              <li><a href="/bootstrap.html">Bootstrap 5.0</a></li>
             </ul>
           </li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="./blogs/blog.html">Blog</a></li>
+              <li><a href="#events">Events</a></li>
+              <li><a href="#tutorials">Tutorials</a></li>
+              <li><a href="#case-studies">Case Studies</a></li>
+            </ul>
+          </li>
+          <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -79,102 +83,259 @@
   </header>
 
   <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title">
-      <div class="breadcrumbs">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><i class="bi bi-house"></i> Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Category</a></li>
-            <li class="breadcrumb-item active current">Portfolio Details</li>
-          </ol>
-        </nav>
-      </div>
-
-      <div class="title-wrapper">
-        <h1>Portfolio Details</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- Portfolio Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
-
-      <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4 g-lg-5">
-          <div class="col-lg-6">
-            <img src="assets/img/portfolio/app-1.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/product-1.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/books-1.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/books-2.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/product-2.jpg" class="img-fluid mb-4" alt="">
-            <img src="assets/img/portfolio/branding-2.jpg" class="img-fluid mb-4" alt="">
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="position-sticky" style="top: 40px">
-              <div class="portfolio-description">
-                <h2>This is an example of portfolio details</h2>
-                <p>
-                  Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-                </p>
-                <p>
-                  Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
-                </p>
-
-                <div class="testimonial-item">
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
-                  <div>
-                    <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                    <h3>Sara Wilsson</h3>
-                    <h4>Designer</h4>
-                  </div>
-                </div>
-
-                <p>
-                  Impedit ipsum quae et aliquid doloribus et voluptatem quasi. Perspiciatis occaecati earum et magnam animi. Quibusdam non qui ea vitae suscipit vitae sunt. Repudiandae incidunt cumque minus deserunt assumenda tempore. Delectus voluptas necessitatibus est.
-                </p>
-
-                <p>
-                  Sunt voluptatum sapiente facilis quo odio aut ipsum repellat debitis. Molestiae et autem libero. Explicabo et quod necessitatibus similique quis dolor eum. Numquam eaque praesentium rem et qui nesciunt.
-                </p>
-
-              </div>
-
-              <div class="portfolio-info mt-5">
-                <h3>Project information</h3>
-                <ul>
-                  <li><strong>Category</strong> Web design</li>
-                  <li><strong>Client</strong> ASU Company</li>
-                  <li><strong>Project date</strong> 01 March, 2020</li>
-                  <li><strong>Project URL</strong> <a href="#">www.example.com</a></li>
-                  <li><a href="#" class="btn-visit align-self-start">Visit Website</a></li>
-                </ul>
-              </div>
+    <!-- Hero Section -->
+    <section class="hero-section py-5 bg-gradient-primary position-relative overflow-hidden">
+      <div class="container position-relative z-2">
+        <div class="row align-items-center min-vh-75">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h1 class="display-4 fw-bold mb-4 text-white">Tech Events & Conferences</h1>
+            <p class="lead mb-4 text-white-75">Stay updated with the latest tech events, conferences, workshops, and webinars. Join our community of developers and tech enthusiasts.</p>
+            <div class="d-flex gap-3">
+              <a href="#upcoming-events" class="btn btn-light btn-lg px-4 py-2 rounded-pill shadow-sm hover-lift">
+                <i class="bi bi-calendar-event me-2"></i>Upcoming Events
+              </a>
+              <a href="#past-events" class="btn btn-outline-light btn-lg px-4 py-2 rounded-pill hover-lift">
+                <i class="bi bi-clock-history me-2"></i>Past Events
+              </a>
             </div>
-
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="position-relative">
+              <img src="https://www.rakiyaworld.com/assets/uploads/media-uploader/mit-evaluating-performance-0-21617358969.jpg" alt="Tech Events" class="img-fluid rounded-4 shadow-lg hover-lift">
+              <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-10 rounded-4"></div>
+            </div>
           </div>
         </div>
-
       </div>
+      <div class="position-absolute top-0 end-0 w-100 h-100 bg-pattern opacity-10"></div>
+    </section>
 
-    </section><!-- /Portfolio Details Section -->
+    <!-- Upcoming Events Section -->
+    <section id="upcoming-events" class="py-5 position-relative">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title display-6 fw-bold">Upcoming Events</h2>
+          <p class="text-muted">Discover and join our upcoming tech events</p>
+        </div>
+        <div class="row g-4">
+          <!-- Event 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 border-0 shadow-sm hover-lift rounded-4 overflow-hidden">
+              <div class="card-img-top position-relative">
+                <img src="https://www.rakiyaworld.com/assets/uploads/media-uploader/mit-evaluating-performance-0-21617358969.jpg" alt="Web Development Conference" class="img-fluid">
+                <div class="event-date position-absolute top-0 start-0 m-3 bg-white rounded-3 shadow-sm p-2 text-center">
+                  <span class="day d-block fw-bold text-primary">15</span>
+                  <span class="month text-muted small">Mar</span>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="event-meta mb-3">
+                  <span class="badge bg-primary-soft rounded-pill px-3 py-2">Conference</span>
+                  <span class="text-muted ms-2"><i class="bi bi-geo-alt"></i> Virtual Event</span>
+                </div>
+                <h3 class="card-title h5 fw-bold mb-3">Web Development Conference 2025</h3>
+                <p class="card-text text-muted mb-4">Join us for a day of learning about the latest trends in web development, featuring talks from industry experts.</p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="bi bi-clock text-primary me-2"></i>9:00 AM - 5:00 PM</li>
+                  <li><i class="bi bi-people text-primary me-2"></i>500+ Attendees</li>
+                </ul>
+                <a href="#" class="btn btn-primary rounded-pill px-4 py-2 w-100 hover-lift">
+                  <i class="bi bi-ticket-perforated me-2"></i>Register Now
+                </a>
+              </div>
+            </div>
+          </div>
 
+          <!-- Event 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 border-0 shadow-sm hover-lift rounded-4 overflow-hidden">
+              <div class="card-img-top position-relative">
+                <img src="https://www.rakiyaworld.com/assets/uploads/media-uploader/mit-evaluating-performance-0-21617358969.jpg" alt="AI Workshop" class="img-fluid">
+                <div class="event-date position-absolute top-0 start-0 m-3 bg-white rounded-3 shadow-sm p-2 text-center">
+                  <span class="day d-block fw-bold text-success">22</span>
+                  <span class="month text-muted small">Mar</span>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="event-meta mb-3">
+                  <span class="badge bg-success-soft rounded-pill px-3 py-2">Workshop</span>
+                  <span class="text-muted ms-2"><i class="bi bi-geo-alt"></i> Mumbai, India</span>
+                </div>
+                <h3 class="card-title h5 fw-bold mb-3">AI & Machine Learning Workshop</h3>
+                <p class="card-text text-muted mb-4">Hands-on workshop covering the fundamentals of AI and machine learning with practical examples.</p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="bi bi-clock text-success me-2"></i>10:00 AM - 4:00 PM</li>
+                  <li><i class="bi bi-people text-success me-2"></i>50 Participants</li>
+                </ul>
+                <a href="#" class="btn btn-success rounded-pill px-4 py-2 w-100 hover-lift">
+                  <i class="bi bi-ticket-perforated me-2"></i>Register Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card h-100 border-0 shadow-sm hover-lift rounded-4 overflow-hidden">
+              <div class="card-img-top position-relative">
+                <img src="https://www.rakiyaworld.com/assets/uploads/media-uploader/mit-evaluating-performance-0-21617358969.jpg" alt="Cloud Computing Webinar" class="img-fluid">
+                <div class="event-date position-absolute top-0 start-0 m-3 bg-white rounded-3 shadow-sm p-2 text-center">
+                  <span class="day d-block fw-bold text-info">29</span>
+                  <span class="month text-muted small">Mar</span>
+                </div>
+              </div>
+              <div class="card-body p-4">
+                <div class="event-meta mb-3">
+                  <span class="badge bg-info-soft rounded-pill px-3 py-2">Webinar</span>
+                  <span class="text-muted ms-2"><i class="bi bi-geo-alt"></i> Online</span>
+                </div>
+                <h3 class="card-title h5 fw-bold mb-3">Cloud Computing Best Practices</h3>
+                <p class="card-text text-muted mb-4">Learn about cloud architecture, deployment strategies, and cost optimization techniques.</p>
+                <ul class="list-unstyled mb-4">
+                  <li class="mb-2"><i class="bi bi-clock text-info me-2"></i>2:00 PM - 4:00 PM</li>
+                  <li><i class="bi bi-people text-info me-2"></i>200+ Attendees</li>
+                </ul>
+                <a href="#" class="btn btn-info rounded-pill px-4 py-2 w-100 hover-lift">
+                  <i class="bi bi-ticket-perforated me-2"></i>Register Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Events Section -->
+    <section class="featured-events py-5 bg-light position-relative">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title display-6 fw-bold">Featured Events</h2>
+          <p class="text-muted">Don't miss these special tech events</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="card border-0 shadow hover-lift rounded-4 overflow-hidden">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="https://www.rakiyaworld.com/assets/uploads/media-uploader/mit-evaluating-performance-0-21617358969.jpg" alt="Tech Summit" class="img-fluid h-100 object-fit-cover">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body p-4">
+                    <div class="event-meta mb-2">
+                      <span class="badge bg-danger-soft rounded-pill px-3 py-2">Featured</span>
+                      <span class="text-muted ms-2">Apr 5-7, 2025</span>
+                    </div>
+                    <h3 class="card-title h5 fw-bold mb-3">Annual Tech Summit 2025</h3>
+                    <p class="card-text text-muted mb-3">Join industry leaders for three days of innovation, networking, and learning.</p>
+                    <a href="#" class="btn btn-danger rounded-pill px-4 py-2 hover-lift">
+                      <i class="bi bi-arrow-right me-2"></i>Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="card border-0 shadow hover-lift rounded-4 overflow-hidden">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="https://www.rakiyaworld.com/assets/uploads/media-uploader/mit-evaluating-performance-0-21617358969.jpg" alt="Hackathon" class="img-fluid h-100 object-fit-cover">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body p-4">
+                    <div class="event-meta mb-2">
+                      <span class="badge bg-warning-soft rounded-pill px-3 py-2">Hackathon</span>
+                      <span class="text-muted ms-2">Apr 12-13, 2025</span>
+                    </div>
+                    <h3 class="card-title h5 fw-bold mb-3">CodeFest 2025</h3>
+                    <p class="card-text text-muted mb-3">48-hour hackathon with exciting prizes and networking opportunities.</p>
+                    <a href="#" class="btn btn-warning rounded-pill px-4 py-2 hover-lift">
+                      <i class="bi bi-arrow-right me-2"></i>Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Categories Section -->
+    <section class="event-categories py-5 position-relative">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <h2 class="section-title display-6 fw-bold">Event Categories</h2>
+          <p class="text-muted">Explore different types of tech events</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="category-card text-center p-4 rounded-4 shadow-sm hover-lift bg-white">
+              <div class="icon-wrapper mb-3">
+                <i class="bi bi-laptop-code display-4 text-primary"></i>
+              </div>
+              <h3 class="h5 fw-bold mb-2">Conferences</h3>
+              <p class="small text-muted mb-0">Industry-leading tech conferences</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="category-card text-center p-4 rounded-4 shadow-sm hover-lift bg-white">
+              <div class="icon-wrapper mb-3">
+                <i class="bi bi-tools display-4 text-success"></i>
+              </div>
+              <h3 class="h5 fw-bold mb-2">Workshops</h3>
+              <p class="small text-muted mb-0">Hands-on learning sessions</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="category-card text-center p-4 rounded-4 shadow-sm hover-lift bg-white">
+              <div class="icon-wrapper mb-3">
+                <i class="bi bi-camera-video display-4 text-info"></i>
+              </div>
+              <h3 class="h5 fw-bold mb-2">Webinars</h3>
+              <p class="small text-muted mb-0">Online learning events</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="category-card text-center p-4 rounded-4 shadow-sm hover-lift bg-white">
+              <div class="icon-wrapper mb-3">
+                <i class="bi bi-code-square display-4 text-warning"></i>
+              </div>
+              <h3 class="h5 fw-bold mb-2">Hackathons</h3>
+              <p class="small text-muted mb-0">Coding competitions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section py-5 bg-gradient-primary text-white position-relative overflow-hidden">
+      <div class="container position-relative z-2">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center" data-aos="fade-up">
+            <h2 class="display-6 fw-bold mb-4">Stay Updated</h2>
+            <p class="lead mb-4 text-white-75">Subscribe to our newsletter to receive updates about upcoming events and tech news.</p>
+            <form class="newsletter-form">
+              <div class="input-group input-group-lg">
+                <input type="email" class="form-control rounded-pill-start border-0 shadow-sm" placeholder="Enter your email">
+                <button class="btn btn-light rounded-pill-end px-4 shadow-sm hover-lift" type="submit">
+                  <i class="bi bi-send me-2"></i>Subscribe
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="position-absolute top-0 end-0 w-100 h-100 bg-pattern opacity-10"></div>
+    </section>
   </main>
 
   <footer id="footer" class="footer">
 
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">EasyFolio</strong> <span>All Rights Reserved</span></p>
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Jayesh Sukhadiya</strong> <span>All Rights Reserved</span></p>
       </div>
       <div class="social-links d-flex justify-content-center">
         <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -183,11 +344,7 @@
         <a href=""><i class="bi bi-linkedin"></i></a>
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by Jayesh Sukhadiya
       </div>
     </div>
 
@@ -197,18 +354,78 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
+
+  <style>
+    /* Custom Styles */
+    .bg-gradient-primary {
+      background: linear-gradient(135deg, var(--bs-primary) 0%, #2c3e50 100%);
+    }
+
+    .bg-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+
+    .bg-primary-soft {
+      background-color: rgba(var(--bs-primary-rgb), 0.1);
+      color: var(--bs-primary);
+    }
+
+    .bg-success-soft {
+      background-color: rgba(var(--bs-success-rgb), 0.1);
+      color: var(--bs-success);
+    }
+
+    .bg-info-soft {
+      background-color: rgba(var(--bs-info-rgb), 0.1);
+      color: var(--bs-info);
+    }
+
+    .bg-warning-soft {
+      background-color: rgba(var(--bs-warning-rgb), 0.1);
+      color: var(--bs-warning);
+    }
+
+    .bg-danger-soft {
+      background-color: rgba(var(--bs-danger-rgb), 0.1);
+      color: var(--bs-danger);
+    }
+
+    .min-vh-75 {
+      min-height: 75vh;
+    }
+
+    .object-fit-cover {
+      object-fit: cover;
+    }
+
+    .text-white-75 {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .z-2 {
+      z-index: 2;
+    }
+  </style>
 
 </body>
 
-</html> 
+</html>
