@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" onselectstart="return false" oncontextmenu="return false">
 
 <head>
   <meta charset="utf-8">
@@ -42,8 +42,8 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about-us.html" class="active">About</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about-us.html">About</a></li>
           <li class="dropdown"><a href="#skills"><span>Technologies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="technologies/laravel.html">Laravel</a></li>
@@ -59,8 +59,8 @@
           <li><a href="portfolio.html">Portfolio</a></li>
           <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#events">Events</a></li>
+              <li><a href="./blogs/blog.html">Blog</a></li>
+              <li><a href="./events/events.html">Events</a></li>
               <li><a href="#tutorials">Tutorials</a></li>
               <li><a href="#case-studies">Case Studies</a></li>
             </ul>
@@ -92,6 +92,8 @@
             <h2 data-aos="fade-up" data-aos-delay="400">Experienced. Innovative. Solution-Driven.</h2>
             <p data-aos="fade-up" data-aos-delay="500">Transforming ideas into powerful web applications with modern
               technologies and best practices.</p>
+            <p data-aos="fade-up" data-aos-delay="550">Delivering scalable, secure, and user-friendly solutions tailored to your business needs.</p>
+            <p data-aos="fade-up" data-aos-delay="600">Let's build something exceptional together.</p>
             <div data-aos="fade-up" data-aos-delay="600">
               <div class="text-center text-lg-start">
                 <a href="#about"
@@ -201,15 +203,15 @@
                 <ul class="list-unstyled mb-0">
                   <li class="mb-3 d-flex align-items-start">
                     <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
-                    <span>PHP Frameworks: Laravel (versions 5 to 11), CodeIgniter</span>
+                    <span>PHP Frameworks: Laravel (v5–v12), CodeIgniter</span>
                   </li>
                   <li class="mb-3 d-flex align-items-start">
                     <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
-                    <span>JavaScript Frameworks: Node.js, Express.js</span>
+                    <span>JavaScript Runtime & Frameworks: Node.js, Express.js</span>
                   </li>
                   <li class="mb-3 d-flex align-items-start">
                     <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
-                    <span>Database Management: MySQL, MongoDB, Firebase</span>
+                    <span>Database Systems: MySQL, MongoDB, Firebase</span>
                   </li>
                   <li class="mb-3 d-flex align-items-start">
                     <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
@@ -346,7 +348,13 @@
                 stroke-width="2"></path>
             </svg>
           </div>
-          <p>My Professional Services</p>
+          <p>
+            My Professional Services<br>
+            I offer end-to-end web development solutions tailored to your business needs.<br>
+            From initial concept to deployment and maintenance, I ensure quality at every step.<br>
+            My expertise covers both frontend and backend, delivering seamless user experiences.<br>
+            Let's collaborate to turn your ideas into impactful digital products.
+          </p>
         </div><!-- End Section Title -->
 
         <div class="row gy-4">
@@ -606,23 +614,23 @@
 
   </main>
 
-  <footer id="footer" class="footer py-4 bg-light mt-5">
+ <footer id="footer" class="footer">
+
     <div class="container">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-md-6">
-          <p class="mb-md-0 text-center text-md-start">© 2023 <strong class="sitename">Jayesh Sukhadiya</strong> • All
-            Rights Reserved</p>
-        </div>
-        <div class="col-md-6">
-          <div class="social-links d-flex gap-3 justify-content-center justify-content-md-end">
-            <a href="#" class="text-muted" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="text-muted" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="text-muted" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="text-muted" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Jayesh Sukhadiya</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <!-- <a href=""><i class="bi bi-twitter-x"></i></a>
+        <a href=""><i class="bi bi-facebook"></i></a> -->
+        <a href="https://www.instagram.com/mr.jayesh_sukhadiya/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/jayesh-sukhadiya-308896b0/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        Designed by Jayesh Sukhadiya
       </div>
     </div>
+
   </footer>
 
   <!-- Scroll Top -->
