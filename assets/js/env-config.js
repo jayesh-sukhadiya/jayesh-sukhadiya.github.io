@@ -9,7 +9,7 @@ const ENV_CONFIG = {
     apiUrl: 'https://staging-api.jayesh-sukhadiya.github.io'
   },
   production: {
-    baseUrl: 'https://jayesh-sukhadiya.github.io',
+    baseUrl: '',
     apiUrl: 'https://api.jayesh-sukhadiya.github.io'
   }
 };
