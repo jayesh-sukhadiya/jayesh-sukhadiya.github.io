@@ -28,55 +28,52 @@
 
   <!-- Main CSS File -->
   <link href="../assets/css/main.css" rel="stylesheet">
+
+  <!-- Environment Configuration -->
+  <script src="../assets/js/env-config.js"></script>
  
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
+  <header id="header" class="header d-flex align-items-center sticky-top" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
+      <a class="logo d-flex align-items-center me-auto me-xl-0" data-nav="home">
         <h1 class="sitename">Jayesh Sukhadiya</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a data-nav="home" class="active">Home</a></li>
+          <li><a data-nav="about">About</a></li>
           <li class="dropdown"><a href="#skills"><span>Technologies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="./laravel.html">Laravel</a></li>
-              <li><a href="./nodejs.html">Node.js</a></li>
-              <li><a href="./angular.html">Angular</a></li>
-              <li><a href="./nextjs.html">Next.js</a></li>
-              <li><a href="./reactjs.html">React.js</a></li>
-              <li><a href="/tailwind.html">Tailwind CSS</a></li>
-              <li><a href="/bootstrap.html">Bootstrap 5.0</a></li>
+              <li><a data-nav="laravel">Laravel</a></li>
+              <li><a data-nav="nodejs">Node.js</a></li>
+              <li><a data-nav="angular">Angular</a></li>
+              <li><a data-nav="nextjs">Next.js</a></li>
+              <li><a data-nav="reactjs">React.js</a></li>
+              <li><a data-nav="tailwind">Tailwind CSS</a></li>
+              <li><a data-nav="bootstrap">Bootstrap 5.0</a></li>
+              <li><a data-nav="python">Python</a></li>
+              <li><a data-nav="wordpress">WordPress</a></li>
             </ul>
           </li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a data-nav="portfolio">Portfolio</a></li>
           <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="./blogs/blog.html">Blog</a></li>
-              <li><a href="#events">Events</a></li>
-              <li><a href="#tutorials">Tutorials</a></li>
-              <li><a href="#case-studies">Case Studies</a></li>
+              <li><a data-nav="blog">Blog</a></li>
+              <li><a data-nav="events">Events</a></li>
             </ul>
           </li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a data-nav="contact">Contact Me</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
       <div class="header-social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/mr.jayesh_sukhadiya/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/jayesh-sukhadiya-308896b0/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
 
     </div>

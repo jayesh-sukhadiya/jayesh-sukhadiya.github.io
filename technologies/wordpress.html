@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>WordPress Development | Jayesh Sukhadiya</title>
+  <meta name="description"
+    content="Experienced WordPress Developer specializing in custom themes, plugins, and website development. Explore my WordPress skills, projects and expertise.">
+  <meta name="keywords"
+    content="WordPress, CMS, theme development, plugin development, PHP, MySQL, website development, WooCommerce, custom themes">
+
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Main CSS Files -->
+  <link href="../assets/css/main.css" rel="stylesheet">
+
+  <!-- Environment Configuration -->
+  <script src="../assets/js/env-config.js"></script>
+  <style>
+    .rounded-circle {
+        width: 100px !important;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 15px rgba(0,0,0,0.05);">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a class="logo d-flex align-items-center me-auto me-xl-0" data-nav="home">
+        <h1 class="sitename">Jayesh Sukhadiya</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a data-nav="home">Home</a></li>
+          <li><a data-nav="about">About</a></li>
+          <li class="dropdown"><a href="#skills"><span>Technologies</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a data-nav="laravel">Laravel</a></li>
+              <li><a data-nav="nodejs">Node.js</a></li>
+              <li><a data-nav="angular">Angular</a></li>
+              <li><a data-nav="nextjs">Next.js</a></li>
+              <li><a data-nav="reactjs">React.js</a></li>
+              <li><a data-nav="tailwind">Tailwind CSS</a></li>
+              <li><a data-nav="bootstrap">Bootstrap 5.0</a></li>
+              <li><a data-nav="python">Python</a></li>
+              <li><a data-nav="wordpress" class="active">WordPress</a></li>
+            </ul>
+          </li>
+          <li><a data-nav="portfolio">Portfolio</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a data-nav="blog">Blog</a></li>
+              <li><a data-nav="events">Events</a></li>
+            </ul>
+          </li>
+          <li><a data-nav="contact">Contact Me</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.instagram.com/mr.jayesh_sukhadiya/" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/jayesh-sukhadiya-308896b0/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main" id="wordpress-main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12 text-center mb-5">
+            <div class="hero-badge mb-3 d-inline-block py-1 px-3 rounded-pill">Content Management System</div>
+            <h1 class="display-3 fw-bold mb-3 hero-title">WordPress <span class="text-primary">Development</span> Journey</h1>
+            <p class="lead mb-4 hero-subtitle">Master the world's most popular CMS for building powerful websites, custom themes, and plugins</p>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+              <a href="#wordpress-basics" class="btn btn-primary px-4 py-2 rounded-pill">Get Started</a>
+              <a href="#wordpress-resources" class="btn btn-outline-secondary px-4 py-2 rounded-pill">View Resources</a>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 rounded-4 overflow-hidden">
+              <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #0073aa 0%, #005a87 100%);">
+                <h3 class="text-white mb-0 text-center fw-bold">Basics</h3>
+              </div>
+              <div class="card-body p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <a href="#wordpress-fundamentals" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-primary bg-opacity-10">
+                        <i class="bi bi-gear fs-5 text-primary"></i>
+                      </span>
+                      <span>WordPress Fundamentals</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-installation" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-primary bg-opacity-10">
+                        <i class="bi bi-download fs-5 text-primary"></i>
+                      </span>
+                      <span>Installation & Setup</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-admin" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-primary bg-opacity-10">
+                        <i class="bi bi-person-gear fs-5 text-primary"></i>
+                      </span>
+                      <span>Admin Dashboard</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-content" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-primary bg-opacity-10">
+                        <i class="bi bi-file-text fs-5 text-primary"></i>
+                      </span>
+                      <span>Content Management</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-themes" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-primary bg-opacity-10">
+                        <i class="bi bi-palette fs-5 text-primary"></i>
+                      </span>
+                      <span>Theme Basics</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 rounded-4 overflow-hidden">
+              <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);">
+                <h3 class="text-white mb-0 text-center fw-bold">Intermediate</h3>
+              </div>
+              <div class="card-body p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <a href="#wordpress-theme-development" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-warning bg-opacity-10">
+                        <i class="bi bi-code-square fs-5 text-warning"></i>
+                      </span>
+                      <span>Theme Development</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-plugin-development" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-warning bg-opacity-10">
+                        <i class="bi bi-puzzle fs-5 text-warning"></i>
+                      </span>
+                      <span>Plugin Development</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-customization" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-warning bg-opacity-10">
+                        <i class="bi bi-sliders fs-5 text-warning"></i>
+                      </span>
+                      <span>Customization & Hooks</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-woocommerce" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-warning bg-opacity-10">
+                        <i class="bi bi-cart fs-5 text-warning"></i>
+                      </span>
+                      <span>WooCommerce</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-security" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-warning bg-opacity-10">
+                        <i class="bi bi-shield-lock fs-5 text-warning"></i>
+                      </span>
+                      <span>Security Best Practices</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 border-0 rounded-4 overflow-hidden">
+              <div class="card-header border-0 py-4" style="background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);">
+                <h3 class="text-white mb-0 text-center fw-bold">Advanced</h3>
+              </div>
+              <div class="card-body p-4">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <a href="#wordpress-multisite" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-diagram-3 fs-5 text-success"></i>
+                      </span>
+                      <span>Multisite Networks</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-rest-api" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-hdd-network fs-5 text-success"></i>
+                      </span>
+                      <span>REST API Development</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-performance" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-speedometer2 fs-5 text-success"></i>
+                      </span>
+                      <span>Performance Optimization</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-headless" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-layers fs-5 text-success"></i>
+                      </span>
+                      <span>Headless WordPress</span>
+                    </a>
+                  </li>
+                  <li class="list-group-item">
+                    <a href="#wordpress-deployment" class="d-flex align-items-center text-decoration-none">
+                      <span class="icon-wrapper me-3 bg-success bg-opacity-10">
+                        <i class="bi bi-cloud-upload fs-5 text-success"></i>
+                      </span>
+                      <span>Deployment & DevOps</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WordPress Fundamentals -->
+    <section id="wordpress-basics" class="section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold section-title pb-0">WordPress Fundamentals</h2>
+            <p class="section-subtitle lead text-muted">Master the core concepts of WordPress and understand what makes it the world's most popular content management system.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-gear fs-2 text-primary"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Core Architecture</h3>
+              <p class="feature-description mb-0 text-muted">Understand WordPress core files, database structure, and the MVC-like architecture that powers the platform.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-book-half fs-2 text-primary"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Hooks & Filters</h3>
+              <p class="feature-description mb-0 text-muted">Learn WordPress hooks (actions and filters) for extending functionality and customizing behavior.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-primary bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-database fs-2 text-primary"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Database Management</h3>
+              <p class="feature-description mb-0 text-muted">Explore WordPress database schema, custom tables, and efficient data handling with WP_Query.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theme Development -->
+    <section id="wordpress-theme-development" class="section py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold section-title pb-0">Theme Development</h2>
+            <p class="section-subtitle lead text-muted">Create custom WordPress themes from scratch with modern development practices and responsive design.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-file-earmark-code fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Template Hierarchy</h3>
+              <p class="feature-description mb-0 text-muted">Master WordPress template hierarchy and create custom template files for different content types.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-sliders fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Customizer API</h3>
+            <p class="feature-description mb-0 text-muted">Build theme customization options using WordPress Customizer API for user-friendly theme settings.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-phone fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Responsive Design</h3>
+              <p class="feature-description mb-0 text-muted">Create mobile-first responsive themes using modern CSS frameworks and WordPress best practices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plugin Development -->
+    <section id="wordpress-plugin-development" class="section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold section-title pb-0">Plugin Development</h2>
+            <p class="section-subtitle lead text-muted">Build powerful WordPress plugins to extend functionality and create custom solutions for clients.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-puzzle fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Plugin Architecture</h3>
+              <p class="feature-description mb-0 text-muted">Learn plugin structure, activation/deactivation hooks, and proper WordPress coding standards.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-gear-wide-connected fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Admin Interfaces</h3>
+              <p class="feature-description mb-0 text-muted">Create custom admin pages, settings panels, and user interfaces using WordPress admin APIs.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-shield-check fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Security & Validation</h3>
+              <p class="feature-description mb-0 text-muted">Implement proper security measures, data validation, and sanitization in WordPress plugins.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WooCommerce -->
+    <section id="wordpress-woocommerce" class="section py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold section-title pb-0">WooCommerce Development</h2>
+            <p class="section-subtitle lead text-muted">Build powerful e-commerce solutions using WooCommerce, the world's most popular WordPress e-commerce plugin.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-cart fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Custom Products</h3>
+              <p class="feature-description mb-0 text-muted">Create custom product types, fields, and variations to meet specific business requirements.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-credit-card fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Payment Gateways</h3>
+              <p class="feature-description mb-0 text-muted">Integrate custom payment gateways and implement secure payment processing solutions.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-warning bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-truck fs-2 text-warning"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Shipping Methods</h3>
+              <p class="feature-description mb-0 text-muted">Develop custom shipping methods and integrate with third-party shipping providers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advanced WordPress -->
+    <section id="wordpress-advanced" class="section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold section-title pb-0">Advanced WordPress Development</h2>
+            <p class="section-subtitle lead text-muted">Explore advanced WordPress concepts and techniques for building enterprise-level applications.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-hdd-network fs-2 text-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">REST API</h3>
+              <p class="feature-description mb-0 text-muted">Build custom REST API endpoints and integrate WordPress with modern frontend frameworks.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-layers fs-2 text-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Headless WordPress</h3>
+              <p class="feature-description mb-0 text-muted">Implement headless WordPress architecture with React, Vue, or other frontend frameworks.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-speedometer2 fs-2 text-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Performance Optimization</h3>
+              <p class="feature-description mb-0 text-muted">Optimize WordPress performance with caching, database optimization, and CDN integration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real-world Applications -->
+    <section id="wordpress-applications" class="section py-5 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-4 fw-bold section-title pb-0">Real-world Applications</h2>
+            <p class="section-subtitle lead text-muted">Explore practical applications and use cases of WordPress in modern web development.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-building fs-2 text-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Corporate Websites</h3>
+              <p class="feature-description mb-0 text-muted">Build professional corporate websites with custom themes, advanced content management, and SEO optimization.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-shop fs-2 text-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">E-commerce Stores</h3>
+              <p class="feature-description mb-0 text-muted">Create powerful online stores with WooCommerce, custom product types, and advanced payment solutions.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="feature-card shadow-sm rounded-4 p-4 h-100 position-relative overflow-hidden hover-shadow transition-all text-center">
+              <div class="feature-icon mb-4 icon-circle bg-success bg-opacity-10 p-3 rounded-circle mx-auto">
+                <i class="bi bi-people fs-2 text-success"></i>
+              </div>
+              <h3 class="feature-title h4 mb-3 fw-bold">Community Platforms</h3>
+              <p class="feature-description mb-0 text-muted">Develop community websites with user registration, forums, and social networking features.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="footer py-4 bg-light mt-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-6">
+            <p class="mb-md-0 text-center text-md-start">© 2023 <strong class="sitename">Jayesh Sukhadiya</strong> • All
+              Rights Reserved</p>
+          </div>
+          <div class="col-md-6">
+            <div class="social-links d-flex gap-3 justify-content-center justify-content-md-end">
+              <a href="#" class="text-muted" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="text-muted" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/mr.jayesh_sukhadiya/" class="text-muted" aria-label="Instagram"><i
+                  class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/jayesh-sukhadiya-308896b0/" class="text-muted" aria-label="LinkedIn"><i
+                  class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
